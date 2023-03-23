@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_product_form_add_field" model="ir.ui.view">
+            <field name="name">product.template.add.field</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_only_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='default_code']" position="after">
+                    <field name="old_code" />
+                </xpath>
+            </field>
+        </record>
+    </data>
+
+        <record id="product_supplierinfo_tree_view_extend" model="ir.ui.view">
+            <field name="name">product.supplierinfo.tree.view.extend</field>
+            <field name="model">product.supplierinfo</field>
+            <field name="inherit_id" ref="product.product_supplierinfo_tree_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree/field[@name='product_code']" position="before">
+                    <field name="operation_supp"/>
+                    <field name="factor_conversion"/>
+                </xpath>
+            </field>
+        </record>
+    <data>
+        <record id="view_purchase_order_add_field_import" model="ir.ui.view">
+            <field name="name">purchase.order.add.field.import</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook//page[@name='purchase_delivery_invoice']//group[@name='invoice_info']//field[@name='fiscal_position_id']" position="after">
+                    <field name="xml_supplier_approval" />
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

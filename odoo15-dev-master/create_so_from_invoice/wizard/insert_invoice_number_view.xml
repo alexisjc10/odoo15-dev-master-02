@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="wizard_insert_number_invoice" model="ir.ui.view">
+        <field name="name">insert.invoice.number</field>
+        <field name="model">insert.invoice.number</field>
+        <field name="arch" type="xml">
+            <form string="Import Sale Invoices">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="invoice_type_charge_x" widget="radio"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="invoice_number_from_x" attrs="{'invisible':[('invoice_type_charge_x','=', False)]}"/>
+                        </group>
+                        <group>
+                            <field name="invoice_number_to_x" attrs="{'invisible':[('invoice_type_charge_x','=', False)]}"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="import_data_sale" string="Importar Data" type="object" class="oe_highlight"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+   </record>
+
+    <record id="insert_numer_invoice_action" model="ir.actions.act_window">
+    <field name="name">Insert Number Invoice</field>
+    <field name="res_model">insert.invoice.number</field>
+    <field name="view_mode">form</field>
+    <field name="view_id" ref="wizard_insert_number_invoice"/>
+    <field name="target">new</field>
+    </record>
+
+
+    <menuitem id="wizard_insert_number_invoice_menu"
+            name="Import Sale Invoices"
+            action="insert_numer_invoice_action"
+            parent="sale.sale_menu_root"
+            sequence="10"
+            active="True"/>
+
+
+
+
+    <record id="wizard_insert_purchase_number_invoice" model="ir.ui.view">
+        <field name="name">insert.purchase.invoice.number</field>
+        <field name="model">insert.purchase.invoice.number</field>
+        <field name="arch" type="xml">
+            <form string="Import Purchase Invoices">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="invoice_type_charge_y" widget="radio"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="invoice_number_from_y" attrs="{'invisible':[('invoice_type_charge_y','=', False)]}"/>
+                        </group>
+                        <group>
+                            <field name="invoice_number_to_y" attrs="{'invisible':[('invoice_type_charge_y','=', False)]}"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="import_data_purchase" string="Importar Data" type="object" class="oe_highlight"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+   </record>
+
+    <record id="insert_purchase_numer_invoice_action" model="ir.actions.act_window">
+    <field name="name">Insert Number Invoice</field>
+    <field name="res_model">insert.purchase.invoice.number</field>
+    <field name="view_mode">form</field>
+    <field name="view_id" ref="wizard_insert_purchase_number_invoice"/>
+    <field name="target">new</field>
+    </record>
+
+
+    <menuitem id="wizard_insert_purchase_number_invoice_menu"
+            name="Import Purchase Invoices"
+            action="insert_purchase_numer_invoice_action"
+            parent="purchase.menu_purchase_root"
+            sequence="10"
+            active="True"/>
+
+</odoo>

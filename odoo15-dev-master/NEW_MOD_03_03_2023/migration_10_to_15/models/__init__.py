@@ -1,0 +1,1 @@
+from . import add_field_product_template

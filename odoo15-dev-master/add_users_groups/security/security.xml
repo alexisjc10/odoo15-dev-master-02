@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="group_user_cash" model="res.groups">
+        <field name="name"> Cash User</field>
+    </record>
+
+    <record id="group_user_sales" model="res.groups">
+        <field name="name"> Sale User</field>
+    </record>
+
+    <record id="group_exter_account_user" model="res.groups">
+        <field name="name"> External Accounting User</field>
+    </record>
+
+    <record id="group_user_partial_invent" model="res.groups">
+        <field name="name"> Partial Inventory User</field>
+    </record>
+
+    <record id="group_user_total_invent" model="res.groups">
+        <field name="name"> Total Inventory User</field>
+    </record>
+
+    <record id="group_user_purchase" model="res.groups">
+        <field name="name"> Purchase User</field>
+    </record>
+
+    <record id="group_user_inter_account_user" model="res.groups">
+        <field name="name"> Internal Accounting User</field>
+    </record>
+
+</odoo>

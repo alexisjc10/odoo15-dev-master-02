@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="action_create_sale_order_from_invoice" model="ir.actions.server">
+            <field name="name">Create Sale Order</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_account_move" />
+            <field name="binding_model_id" ref="model_account_move" />
+            <field name="state">code</field>
+            <field name="code">records.create_sale_order_from_invoice()</field>
+        </record>
+
+        <record id="action_confirm_create_sale_order" model="ir.actions.server">
+            <field name="name">Confirm Sale Order</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="sale.model_sale_order" />
+            <field name="binding_model_id" ref="sale.model_sale_order" />
+            <field name="state">code</field>
+            <field name="code">records.action_confirm()</field>
+        </record>
+
+        <record id="action_add_pick_sale_order" model="ir.actions.server">
+            <field name="name">Cambiar A Borrador</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="sale.model_sale_order" />
+            <field name="binding_model_id" ref="sale.model_sale_order" />
+            <field name="state">code</field>
+            <field name="code">records.confirm_order_change_ware()</field>
+        </record>
+
+        <record id="action_corregir_UDM_invoice_invoice" model="ir.actions.server">
+            <field name="name">Corregir UDM</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_account_move" />
+            <field name="binding_model_id" ref="model_account_move" />
+            <field name="state">code</field>
+            <field name="code">records.corregir_UDM_invoice()</field>
+        </record>
+
+        <record id="action_confirm_invoice" model="ir.actions.server">
+            <field name="name">Confirmar Facturas</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_account_move" />
+            <field name="binding_model_id" ref="model_account_move" />
+            <field name="state">code</field>
+            <field name="code">records.action_post()</field>
+        </record>
+
+        <record id="action_asignar_secuencia_purchase_invoice" model="ir.actions.server">
+            <field name="name">Asignar Secuencia Purchase Order</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_purchase_order" />
+            <field name="binding_model_id" ref="model_purchase_order" />
+            <field name="state">code</field>
+            <field name="code">records.asignar_secuencia_fact_provee()</field>
+        </record>
+
+    </data>
+</odoo>
