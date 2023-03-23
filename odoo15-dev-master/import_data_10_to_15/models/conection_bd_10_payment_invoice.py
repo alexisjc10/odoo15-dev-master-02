@@ -64,5 +64,4 @@ class AccountPayment(models.Model):
                 'reconciled_invoice_ids': [(6, 0, [list_invoices_reconcilie_v15])
                 ],
                 })
-            # self.env['account.move.line'].action_reconcile(invoice_pay)
             i += 1
