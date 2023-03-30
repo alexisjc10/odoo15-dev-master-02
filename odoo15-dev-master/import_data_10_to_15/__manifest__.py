@@ -15,6 +15,8 @@
     'data':
         [
             'view/add_button_charge_data.xml',
+            'wizard/insert_ID_number_wizard.xml',
+            'security/ir.model.access.csv',
         ],
     'installable': True,
 }

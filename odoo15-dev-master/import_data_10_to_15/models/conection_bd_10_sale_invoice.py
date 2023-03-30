@@ -12,8 +12,8 @@ _logger = logging.getLogger(__name__)
 
 url = "http://apps.ferrecocles.com"
 db = 'FerreCocles'
-username = 'admin'
-password = 'admin'
+username = 'jtapia@accura.pe'
+password = '123'
 
 
 

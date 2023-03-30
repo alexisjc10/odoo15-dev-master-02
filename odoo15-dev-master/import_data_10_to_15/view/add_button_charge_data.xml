@@ -1,29 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-<!--    <record id="view_add_button_import_data_purchase_invoice_provee" model="ir.ui.view">-->
-<!--        <field name="name">purchase.order.add.button.import.data.provee</field>-->
-<!--        <field name="model">purchase.order</field>-->
-<!--        <field name="inherit_id" ref="purchase.purchase_order_kpis_tree"/>-->
-<!--        <field name="arch" type="xml">-->
-<!--            <xpath expr="//tree" position="inside">-->
-<!--                <button name="import_data_purchase_invoices"  string="Importar Data FP" type="object"/>-->
-<!--            </xpath>-->
-<!--        </field>-->
-<!--    </record>-->
     <data>
-        <record id="view_add_button_import_data_sale_invoice" model="ir.ui.view">
-            <field name="name">sale.order.add.button.import.data</field>
-            <field name="model">sale.order</field>
-            <field name="inherit_id" ref="sale.view_quotation_tree"/>
-            <field name="arch" type="xml">
-                <xpath expr="//tree" position="inside">
-                    <header>
-                            <button name="import_data_sale_invoices" string="Importar Data FC" type="object"/>
-                    </header>
-                </xpath>
-            </field>
-        </record>
-
         <record id="action_confirm_create_sale_order" model="ir.actions.server">
             <field name="name">Extraer Pagos</field>
             <field name="type">ir.actions.server</field>
@@ -32,7 +9,5 @@
             <field name="state">code</field>
             <field name="code">records.import_payments()</field>
         </record>
-
-
     </data>
 </odoo>
